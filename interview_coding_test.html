@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String Calculator - 30 minutes</title>
+	<style type="text/css">
+		button {
+			margin-top: 10px;
+			color: white;
+			background-color: steelblue;
+		}
+		input {
+			margin-top: 10px;
+		}
+	</style>
+	<!-- jQuery CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Steve's Magic Calculator</h1>
+	<!-- Values to be calculated -->
+	<label>Enter Value: <input type="text" id="input1"></label><br>
+	<label>Enter Value: <input type="text" id="input2"></label><br>
+	<!-- Operands -->
+	<button id="addButton">Add</button>
+	<button id="subButton">Subtract</button>
+	<button id="multButton">Multiply</button>
+	<button id="divButton">Divide</button>
+	<!-- Display the answer -->
+	<div id="answer"></div>
+	<!-- Clear all fields -->
+	<button id="clear">Clear Form</button>
+
+<script type="text/javascript">
+		
+	function add(x, y){
+		return x + y;
+	};
+
+	function subtract(x, y){
+		return x - y;
+	};
+
+	function multiply(x, y){
+		return x * y;
+	};
+
+	function divide(x, y){
+		return x / y;
+	};
+
+	$('#addButton').on('click', function(){
+		var input1 = parseInt($('#input1').val());
+		var input2 = parseInt($('#input2').val());
+
+		var answer = add(input1, input2);
+		$('#answer').append(answer);
+	});
+
+	$('#subButton').on('click', function(){
+		var input1 = parseInt($('#input1').val());
+		var input2 = parseInt($('#input2').val());
+
+		var answer = subtract(input1, input2);
+		$('#answer').append(answer);
+	});
+	
+	$('#multButton').on('click', function(){
+		var input1 = parseInt($('#input1').val());
+		var input2 = parseInt($('#input2').val());
+
+		var answer = multiply(input1, input2);
+		$('#answer').append(answer);
+	});
+
+	$('#divButton').on('click', function(){
+		var input1 = parseInt($('#input1').val());
+		var input2 = parseInt($('#input2').val());
+
+		var answer = divide(input1, input2);
+		$('#answer').append(answer);
+	});
+
+	$('#clear').on('click', function(){
+		$('#input1').val(' ');
+		$('#input2').val(' ');
+		$('#answer').html(' ');
+	})
+
+
+
+</script>
+</body>
+</html>
+
+
+ 
